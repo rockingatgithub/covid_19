@@ -1,0 +1,37 @@
+<h1>Hi! <%= doc.name%></h1>
+<ul>
+<li>
+    <h5>Register a Patient</h5>
+    <a href="/patients/register">
+        Register
+    </a>
+</li>
+<li>
+    <h5>Create Report or get all report</h5>
+    <form action="/patients/report" method="POST">
+        <input type="text" name="pat_num" placeholder="Patent Phone Number" required/>
+        <input type="submit" value="submit" placeholder="Submit" />
+    </form>
+</li>
+
+<li>
+    <h5>Get Covid Status</h5>
+   
+        <label for="statuses">Status:</label>
+        <select name="status" id="statuses">
+            <option value="Negative">
+              <a href="/reports/Negative">  Negative </a>
+            </option>
+            <option value="Travelled-Quarantine">
+               <a href="/reports/Travelled-Quarantine"> Travelled-Quarantine </a>
+            </option>
+            <option value="Symptoms-Quarantine">
+                <a href="/reports/Symptoms-Quarantine">    Symptoms-Quarantine </a>
+            </option>
+            <option value="Positive-Admit">
+               <a href="/reports/Positive-Admit"> Positive-Admit </a>
+            </option>
+        </select>
+</li>
+
+</ul>
