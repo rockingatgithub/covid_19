@@ -12,4 +12,7 @@ router.post('/login', passport.authenticate(
     { failureRedirect: '/api/v1/doctors/signin' }
 ) , doctorsController.createSession);
 
+router.post('/login2', doctorsController.createSession2);
+router.get('/profile', passport.checkAuthentication, doctorsController.profile);
+
 module.exports = router;

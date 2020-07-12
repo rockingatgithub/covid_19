@@ -1,37 +1,31 @@
-<h1>Hi! <%= doc.name%></h1>
+<h1>Hi! <%= locals.user.name%></h1>
 <ul>
 <li>
     <h5>Register a Patient</h5>
-    <a href="/api/v1/patients/register">
+    <a href="/api/v1/patients/registerForm">
         Register
     </a>
 </li>
 <li>
-    <h5>Create Report or get all report</h5>
+    <h5>Create Report</h5>
     <form action="/api/v1/patients/report" method="POST">
-        <input type="text" name="pat_num" placeholder="Patent Phone Number" required/>
+        <input type="text" name="phoneNumber" placeholder="Patent Phone Number" required/>
         <input type="submit" value="submit" placeholder="Submit" />
     </form>
 </li>
 
+
 <li>
     <h5>Get Covid Status</h5>
    
-        <label for="statuses">Status:</label>
-        <select name="status" id="statuses">
-            <option value="Negative">
-              <a href="/api/v1/reports/Negative">  Negative </a>
-            </option>
-            <option value="Travelled-Quarantine">
-               <a href="/api/v1/reports/Travelled-Quarantine"> Travelled-Quarantine </a>
-            </option>
-            <option value="Symptoms-Quarantine">
-                <a href="/api/v1/reports/Symptoms-Quarantine">    Symptoms-Quarantine </a>
-            </option>
-            <option value="Positive-Admit">
-               <a href="/api/v1/reports/Positive-Admit"> Positive-Admit </a>
-            </option>
-        </select>
-</li>
+        <a href="/api/v1/reports/allStatus/Negative">  Negative </a>
+        <br/>
+        <a href="/api/v1/reports/allStatus/Travelled-Quarantine"> Travelled-Quarantine </a>
+        <br/>
+        <a href="/api/v1/reports/allStatus/Symptoms-Quarantine">    Symptoms-Quarantine </a>
+        <br/>
+        <a href="/api/v1/reports/allStatus/Positive-Admit"> Positive-Admit </a>
+        <br/>
+    </li>
 
 </ul>

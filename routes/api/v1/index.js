@@ -3,6 +3,6 @@ const router = express.Router();
 
 router.use('/doctors', require('./doctors'));
 router.use('/patients', require('./patients'));
-router.use('/doctors', require('./reports'));
+router.use('/reports', require('./reports'));
 
 module.exports = router;
