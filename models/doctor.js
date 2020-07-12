@@ -14,10 +14,6 @@ const doctorSchema =  new mongoose.Schema({
         type: String,
         required: true,
     },
-    serviceType: {
-        type: String,
-        default: 'Covid Doctor'
-    },
 },
     {
     timestamps: true,
