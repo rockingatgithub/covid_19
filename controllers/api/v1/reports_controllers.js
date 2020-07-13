@@ -5,8 +5,8 @@ module.exports.create = async function(req, res){
         let report = await Report.create({
             date: req.body.date,
             status: req.body.status,
-            doctor: req.user._id,
-            patient: req.params.id,
+            doctor: req.query.docid,
+            patient: req.query.id,
         })
         return res.json(200, {
             message: "report successfully created",

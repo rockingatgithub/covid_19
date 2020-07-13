@@ -30,7 +30,7 @@ module.exports.create = async function(req, res){
         else{
             let newDoc = await Doc.create(req.body);
 
-            let doc = await newDoc.populate('name', 'email').execPopulate();
+            // let doc = await newDoc.populate('name', 'email').execPopulate();
             
             return res.json(200, {
                 message: 'message sent',
@@ -112,7 +112,7 @@ module.exports.createSession2 = async function(req, res){
         return res.json(200, {
             message: "Sign in successfull here is your token",
             data: {
-                token: jwt.sign(doc.toJSON(), 'hospital_api', {expiresIn: '100000'}),
+                token: jwt.sign(doc.toJSON(), 'hospital_api', {expiresIn: '1000000'}),
             }
         })
     }

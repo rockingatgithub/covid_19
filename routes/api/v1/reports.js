@@ -1,11 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const passport = require('passport');
+
 
 const reportsController = require('../../../controllers/api/v1/reports_controllers');
 
-router.get('/allStatus/:status', reportsController.allStatus);
+router.get('/allStatus/:status', passport.authenticate('jwt', { session: false }) ,reportsController.allStatus);
 
 
-router.post('/newReport/:id', reportsController.create);
+router.post('/newReport', passport.authenticate('jwt', { session: false }) ,reportsController.create);
 
 module.exports = router;

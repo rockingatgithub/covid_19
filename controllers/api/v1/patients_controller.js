@@ -14,7 +14,7 @@ module.exports.create = async function(req, res){
                 name: req.body.name,
                 email: req.body.email,
                 phoneNumber:req.body.phoneNumber,
-                doctor: req.user._id,
+                doctor: req.query.docid,
             });
         }
         return res.json(200, {

@@ -1,6 +1,6 @@
 <h1>Hi Doc!</h1>
 <h2>Crete Report for <%= pat.name %> </h2>
-    <form action="/api/v1/reports/newReport/<%= pat._id %>" method="POST">
+    <form action="/api/v1/reports/newReport/?id=<%= pat._id %>&docid=<%= user._id%>" method="POST">
     <input type="date" placeholder="Date" name="date" required />
     <select name="status" >
         <option value="Negative">
