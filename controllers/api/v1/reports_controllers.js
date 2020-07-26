@@ -8,14 +8,14 @@ module.exports.create = async function(req, res){
             doctor: req.query.docid,
             patient: req.query.id,
         })
-        return res.json(200, {
+        return res.status(200).json({
             message: "report successfully created",
             report: report,
         });
     }
     catch(err){
         console.log(err);
-        return res.json(401, {
+        return res.status(401).json({
             message: "Internal Server Error",
         })
     }
@@ -24,7 +24,7 @@ module.exports.create = async function(req, res){
 module.exports.allStatus = async function(req, res){
     try{
         let reports = await Report.find({status: req.params.status});
-        return res.json(200, {
+        return res.status(200).json({
             message: "All data of a status",
             data: {
                 reports: reports,
@@ -33,7 +33,7 @@ module.exports.allStatus = async function(req, res){
     }
     catch(err){
         console.log(err);
-        return res.json(401, {
+        return res.status(401).json({
             message: "Internal Server Error",
         })
     }
