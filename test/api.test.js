@@ -6,7 +6,7 @@ const should = require('should');
 const chaiHttp = require('chai-http')
 const server = require('../index');
 const { expect } = require('chai');
-let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjFkMzM0MDEyM2M3YzE0NzhjZjE3MjciLCJuYW1lIjoic3VkaGVuZHJhIiwiZW1haWwiOiJjeWJlcmtpbmdzaWRAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMjM0IiwiY3JlYXRlZEF0IjoiMjAyMC0wNy0yNlQwNzozOTo0NC4yODBaIiwidXBkYXRlZEF0IjoiMjAyMC0wNy0yNlQwNzozOTo0NC4yODBaIiwiX192IjowLCJpYXQiOjE1OTU4MzYxMDMsImV4cCI6MTU5NTgzNzEwM30.qNe-aJQr1bq0rFuUGjGA18wYVFk3mxfrtILhZDW70ls';
+let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjFkMzM0MDEyM2M3YzE0NzhjZjE3MjciLCJuYW1lIjoic3VkaGVuZHJhIiwiZW1haWwiOiJjeWJlcmtpbmdzaWRAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMjM0IiwiY3JlYXRlZEF0IjoiMjAyMC0wNy0yNlQwNzozOTo0NC4yODBaIiwidXBkYXRlZEF0IjoiMjAyMC0wNy0yNlQwNzozOTo0NC4yODBaIiwiX192IjowLCJpYXQiOjE1OTU4NTAwMTgsImV4cCI6MTU5NTg1MTAxOH0.rhZM4AwsRW560xwKQOZSk6GpBNcjbx8gJkbfyhkHj8o';
 chai.use(chaiHttp);
 
 
@@ -17,7 +17,8 @@ chai.use(chaiHttp);
 describe('Hospital_api', () => {
     it('it should register the patients',  async () => {
        const response = await chai.request('http://localhost:8000')
-            .post('/api/v1/patients/register?docid=5f1d3340123c7c1478cf1727')
+            .post('/api/v1/patients/register')
+            .query({docid : '5f1d3340123c7c1478cf1727'})
             .type('form')
             .send({
                 '_method': 'post',
@@ -41,7 +42,8 @@ describe('Hospital_api', () => {
 describe('Hospital_api', () => {
     it('it should create a new report',  async () => {
        const response = await chai.request('http://localhost:8000')
-            .post('/api/v1/reports/newReport?id=5f1d35d9123c7c1478cf1729&docid=5f1d3340123c7c1478cf1727')
+            .post('/api/v1/reports/newReport')
+            .query({id : '5f1d35d9123c7c1478cf1729', docid : '5f1d3340123c7c1478cf1727'})
             .type('form')
             .send({
                 '_method': 'post',
