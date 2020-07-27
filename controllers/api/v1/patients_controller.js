@@ -12,7 +12,6 @@ module.exports.create = async function(req, res){
         if(!patient){
             patient = await pat.create({
                 name: req.body.name,
-                email: req.body.email,
                 phoneNumber:req.body.phoneNumber,
                 doctor: req.query.docid,
             });

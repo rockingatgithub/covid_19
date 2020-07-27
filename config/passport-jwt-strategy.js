@@ -9,7 +9,7 @@ const ExtractJWT = require('passport-jwt').ExtractJwt;
 
 let opts = {
     jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
-    secretOrKey: 'hospital_api',
+    secretOrKey: 'hospital_api',                              //change key if required
 
 }
 

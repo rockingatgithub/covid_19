@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 // =============================connecting to mongodb===============================
 
 
-mongoose.connect('mongodb://localhost/hospital_api');
+mongoose.connect('mongodb://localhost/hospital_api');  //change the database name accordingly
 
 const db = mongoose.connection;
 
