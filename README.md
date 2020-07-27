@@ -4,7 +4,8 @@ An hospital API for helping doctors.
 
 ## Installation
 
-Clone the [repo](https://github.com/rockingatgithub/covid_19).
+> Clone the [repo](https://github.com/rockingatgithub/covid_19).
+> Make sure you have mongodb community edition installed.
 
 Open terminal in project directory and run below command in terminal or cmd.
 ```bash
