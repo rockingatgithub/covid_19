@@ -1,7 +1,29 @@
 # covid_19
+
 An hospital API for helping doctors.
-Steps:- 1.Clone the repo.
-        2.run 'npm install'
-        3.Use post for fetching data through API.
-        4.go through routes and temporory form created in ejs form.
-        5.Or, open 'localhost:8000 in your browser.
+
+## Installation
+
+Clone the [repo](https://github.com/rockingatgithub/covid_19).
+
+Open terminal in project directory and run below command in terminal or cmd.
+```bash
+ npm install
+```
+
+## Usage
+
+Use Postman for fetching data through API.
+go through the routes folders for different routes.
+
+## Testing API
+
+To test the api using mocha and chai run following command instead.
+
+```bash
+ npm run test
+```
+
+## Contributing 
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

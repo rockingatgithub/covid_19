@@ -2,9 +2,9 @@ const pat = require('../../../models/patient');
 const Patient = require('../../../models/patient');
 const Report = require('../../../models/report');
 
-module.exports.signup = function(req, res){
-    return res.render('pat_regis');
-}
+
+// ============================registering patients if not already present===============================
+
 
 module.exports.create = async function(req, res){
     try{
@@ -30,25 +30,9 @@ module.exports.create = async function(req, res){
     }
 }
 
-module.exports.reportForm = async function(req, res){
-    let pat = await Patient.findOne({phoneNumber: req.body.phoneNumber});
-    // console.log(req.body.phoneNumber);
-    return res.render('pat_report_form', {
-        pat: pat,
-    });
-}
 
-module.exports.openReportForm = async function(req, res){
-    try{
-        let pat = await Patient.findById(req.params.id);
-        return res.render('report_form', {
-            pat: pat,
-        })
-    }
-    catch(err){
-        return res.redirect('back');
-    }
-}
+// ==================================getting all reports of a patients================================
+
 
 module.exports.allReports = async function(req, res){
     try{

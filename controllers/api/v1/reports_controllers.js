@@ -1,5 +1,7 @@
 const Report = require('../../../models/report');
 
+// ============================= creating a new report for the patients ==============================
+
 module.exports.create = async function(req, res){
     try{
         let report = await Report.create({
@@ -20,6 +22,8 @@ module.exports.create = async function(req, res){
         })
     }
 }
+
+// ========================== getting all reports for a particular status ===================================
 
 module.exports.allStatus = async function(req, res){
     try{

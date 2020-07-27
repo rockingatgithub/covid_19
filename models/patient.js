@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+// =================================defining the patient schema======================================
+
 const patientSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -9,10 +11,6 @@ const patientSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true,
-    },
-    email: {
-        type: String,
-        default: '',
     },
     doctor: {
         type: mongoose.Schema.Types.ObjectId,

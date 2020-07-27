@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+// =================================defining the doctors schema===========================
+
 const doctorSchema =  new mongoose.Schema({
     name: {
         type: String,
