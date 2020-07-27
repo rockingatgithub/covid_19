@@ -9,6 +9,7 @@ Clone the [repo](https://github.com/rockingatgithub/covid_19).
 Open terminal in project directory and run below command in terminal or cmd.
 ```bash
  npm install
+ npm start
 ```
 
 ## Usage
